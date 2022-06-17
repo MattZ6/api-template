@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "prisma generate",
     "dev": "tsnd -r tsconfig-paths/register --inspect --exit-child --transpile-only --ignore-watch node_modules --respawn src/main/server.ts",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:dev": "cross-env DATABASE_PORT=5432 && yarn dev",
     "prisma:dev": "cross-env DATABASE_HOST=localhost prisma"
   },
   "engines": {
