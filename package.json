@@ -12,7 +12,10 @@
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "docker:dev": "cross-env DATABASE_PORT=5432 && yarn dev",
-    "prisma:dev": "cross-env DATABASE_HOST=localhost prisma"
+    "prisma:dev": "cross-env DATABASE_HOST=localhost prisma",
+    "type-check": "tsc",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js)\" --write"
   },
   "engines": {
     "node": "14.19.3"
