@@ -18,7 +18,7 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js)\" --write"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "prisma": {
     "schema": "src/infra/database/prisma/schema.prisma"
