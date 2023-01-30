@@ -1,10 +1,12 @@
-import { IHttpResponse } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols';
 
-import { ErrorDTO, toErrorDTO } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO';
 
-export function unauthorized(error: Error): IHttpResponse<ErrorDTO> {
+type Output = HttpProtocols.IResponse<HttpResponseHelper.ErrorDTO>;
+
+export function unauthorized(error: Error): Output {
   return {
     statusCode: 401,
-    body: toErrorDTO(error),
+    body: HttpResponseHelper.toErrorDTO(error),
   };
 }

@@ -10,7 +10,7 @@ export function adaptRoute(controller: IController) {
       query: request.query ?? {},
       headers: request.headers ?? {},
       user: request.user,
-      original_url: request.originalUrl,
+      originalUrl: request.originalUrl,
       method: request.method,
     });
 

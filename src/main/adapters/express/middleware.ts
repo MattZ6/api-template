@@ -9,7 +9,7 @@ export function adaptMiddleware(middleware: IMiddleware) {
       query: request?.query ?? {},
       params: request?.params ?? {},
       headers: request?.headers ?? {},
-      original_url: request.originalUrl,
+      originalUrl: request.originalUrl,
       method: request.method,
       user: request.user,
     });
