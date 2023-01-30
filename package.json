@@ -4,21 +4,26 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "prestart": "pnpm run db:migrate",
+    "postinstall": "pnpm exec prisma generate",
     "build": "rimraf dist && babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "cross-env NODE_ENV=production node dist/main/server.js",
-    "test": "jest --passWithNoTests",
-    "test:cov": "yarn test --coverage",
     "dev": "tsnd -r tsconfig-paths/register --inspect --exit-child --transpile-only --ignore-watch node_modules --respawn src/main/server.ts",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:dev": "cross-env DATABASE_PORT=5432 && yarn dev",
-    "prisma:dev": "cross-env DATABASE_HOST=localhost prisma",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js)\" --write"
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js)\" --write",
+    "test": "jest --passWithNoTests",
+    "test:cov": "pnpm run test --coverage",
+    "docker:dev": "cross-env DATABASE_PORT=5432 && pnpm run dev",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "prisma:dev": "cross-env DATABASE_HOST=localhost prisma",
+    "db:migrate": "pnpm run prisma migrate deploy",
+    "db:config": "pnpm run db:migrate"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "pnpm": ">=7"
   },
   "prisma": {
     "schema": "src/infra/database/prisma/schema.prisma"
