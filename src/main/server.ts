@@ -2,6 +2,8 @@ import { config } from 'dotenv';
 
 import { app } from '@main/config/app';
 
+import { apiConfig } from './config/env';
+
 config();
 
 function printError(message: string) {
@@ -12,8 +14,8 @@ async function startServer() {
   console.log('\n⏳ Starting server...');
 
   try {
-    app.listen(process.env.PORT, () => {
-      console.log(`🚀 Server is running in port ${process.env.PORT}\n`);
+    app.listen(apiConfig.PORT, () => {
+      console.log(`🚀 Server is running in port ${apiConfig.PORT}\n`);
     });
   } catch (error) {
     printError('-----------------------------------------');

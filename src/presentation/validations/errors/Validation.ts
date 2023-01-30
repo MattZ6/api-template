@@ -1,15 +1,17 @@
-export class ValidationError extends Error {
+import { ApplicationError } from '@domain/errors';
+
+export class ValidationError extends ApplicationError {
   public field: string;
   public type: string;
-  public value?: string | number;
+  public value: string | number | null;
 
   constructor(
     field: string,
     type: string,
     message: string,
-    value: string | number = undefined
+    value: string | number = null
   ) {
-    super(message);
+    super(message, 'validation');
 
     super.name = this.constructor.name;
     this.field = field;

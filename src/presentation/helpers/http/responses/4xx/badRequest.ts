@@ -1,22 +1,22 @@
-import { IHttpResponse } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols';
 import { ValidationError } from '@presentation/validations/errors';
 
-import { ErrorDTO } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO';
 
 type ValidationErrorData = {
-  field?: string;
-  type?: string;
-  value?: string | number;
+  field: string;
+  type: string;
   message: string;
+  value?: string | number;
 };
 
-type ValidationErrorDTO = ErrorDTO & {
+type ValidationErrorDTO = HttpResponseHelper.ErrorDTO & {
   validation: ValidationErrorData;
 };
 
-export function badRequest(
-  error: ValidationError
-): IHttpResponse<ValidationErrorDTO> {
+type Output = HttpProtocols.IResponse<ValidationErrorDTO>;
+
+export function badRequest(error: ValidationError): Output {
   return {
     statusCode: 400,
     body: {

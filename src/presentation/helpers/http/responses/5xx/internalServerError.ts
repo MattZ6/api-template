@@ -1,8 +1,10 @@
-import { IHttpResponse } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols';
 
-import { ErrorDTO } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO';
 
-export function internalServerError(_: Error): IHttpResponse<ErrorDTO> {
+type Output = HttpProtocols.IResponse<HttpResponseHelper.ErrorDTO>;
+
+export function internalServerError(): Output {
   return {
     statusCode: 500,
     body: {

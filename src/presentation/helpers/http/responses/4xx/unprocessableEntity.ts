@@ -1,10 +1,12 @@
-import { IHttpResponse } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols';
 
-import { ErrorDTO, toErrorDTO } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO';
 
-export function unprocessableEntity(error: Error): IHttpResponse<ErrorDTO> {
+type Output = HttpProtocols.IResponse<HttpResponseHelper.ErrorDTO>;
+
+export function unprocessableEntity(error: Error): Output {
   return {
     statusCode: 422,
-    body: toErrorDTO(error),
+    body: HttpResponseHelper.toErrorDTO(error),
   };
 }
