@@ -6,13 +6,13 @@ EXPOSE ${PORT}
 
 WORKDIR /home/node/app
 
-COPY --chown=node:node package.json yarn.lock ./
+COPY --chown=node:node package.json pnpm.lock ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 COPY --chown=node:node . .
 
-RUN yarn prisma generate
+RUN pnpm prisma generate
 
-CMD [ "yarn", "docker:dev" ]
+CMD [ "pnpm", "docker:dev" ]
