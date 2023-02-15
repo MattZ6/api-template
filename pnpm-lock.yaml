@@ -29,7 +29,7 @@ specifiers:
   eslint-plugin-import-helpers: 1.3.1
   eslint-plugin-prettier: 4.2.1
   express: 4.18.2
-  git-commit-msg-linter: 4.5.0
+  git-commit-msg-linter: 4.6.0
   helmet: 6.0.1
   prettier: 2.8.4
   prisma: 4.10.1
@@ -74,7 +74,7 @@ devDependencies:
   eslint-plugin-import: 2.27.5_kuqv7qxblf6fgldep4hddd7xwa
   eslint-plugin-import-helpers: 1.3.1_eslint@8.33.0
   eslint-plugin-prettier: 4.2.1_qa2thblfovmfepmgrc7z2owbo4
-  git-commit-msg-linter: 4.5.0
+  git-commit-msg-linter: 4.6.0
   prettier: 2.8.4
   prisma: 4.10.1
   ts-node-dev: 2.0.0_4bewfcp2iebiwuold25d6rgcsy
@@ -3235,9 +3235,10 @@ packages:
     resolution: {integrity: sha512-YCcF28IqSay3fqpIu5y3Krg/utCBHBeoflkZyHj/QcqI2nrLPC3ZegS9CmIo+hJb8K7aiGsuUl7PwWVjNG2HQQ==}
     dev: true
 
-  /git-commit-msg-linter/4.5.0:
-    resolution: {integrity: sha512-jEVRNeiuCLjgsd0srXlfN2syNaDbCEoqvbs3YaVcAwb6dstpMoUjguv2MN5anec8DG9SgWZe5jmpT4H4iv5IcA==}
+  /git-commit-msg-linter/4.6.0:
+    resolution: {integrity: sha512-eTDrZSToTugWcJSKiOihwyQjBCXTNQ0+EDP9mrH7DyBTTk2bFrj9/+zCCs8f7R0zP154Ozm7e2hqNG95a1OAiw==}
     engines: {node: '>= 8.0.0'}
+    hasBin: true
     requiresBuild: true
     dependencies:
       chalk: 2.4.2
