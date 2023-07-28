@@ -1,8 +1,8 @@
-import { HttpProtocols } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols'
 
-import { HttpResponseHelper } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO'
 
-type Output = HttpProtocols.IResponse<HttpResponseHelper.ErrorDTO>;
+type Output = HttpProtocols.IResponse<HttpResponseHelper.ErrorDTO>
 
 export function internalServerError(): Output {
   return {
@@ -11,5 +11,5 @@ export function internalServerError(): Output {
       code: 'internal',
       message: 'Internal server error',
     },
-  };
+  }
 }

@@ -1,10 +1,10 @@
-import { Router } from 'express';
-import type { Express } from 'express';
+import { Router } from 'express'
+import type { Express } from 'express'
 
-const routes = Router();
+const routes = Router()
 
 // Here goes the routes
 
 export function setupRoutes(app: Express) {
-  app.use(routes);
+  app.use(routes)
 }

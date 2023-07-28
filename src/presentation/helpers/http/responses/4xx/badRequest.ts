@@ -1,20 +1,20 @@
-import { HttpProtocols } from '@presentation/protocols';
-import { ValidationError } from '@presentation/validations/errors';
+import { HttpProtocols } from '@presentation/protocols'
+import { ValidationError } from '@presentation/validations/errors'
 
-import { HttpResponseHelper } from '../errorDTO';
+import { HttpResponseHelper } from '../errorDTO'
 
 type ValidationErrorData = {
-  field: string;
-  type: string;
-  message: string;
-  value?: string | number;
-};
+  field: string
+  type: string
+  message: string
+  value?: string | number
+}
 
 type ValidationErrorDTO = HttpResponseHelper.ErrorDTO & {
-  validation: ValidationErrorData;
-};
+  validation: ValidationErrorData
+}
 
-type Output = HttpProtocols.IResponse<ValidationErrorDTO>;
+type Output = HttpProtocols.IResponse<ValidationErrorDTO>
 
 export function badRequest(error: ValidationError): Output {
   return {
@@ -29,5 +29,5 @@ export function badRequest(error: ValidationError): Output {
         message: error.message,
       },
     },
-  };
+  }
 }

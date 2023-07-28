@@ -1,8 +1,8 @@
-import { HttpProtocols } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols'
 
-export function ok<T = any>(data: T): HttpProtocols.IResponse<T> {
+export function ok<T = unknown>(data: T): HttpProtocols.IResponse<T> {
   return {
     statusCode: 200,
     body: data,
-  };
+  }
 }

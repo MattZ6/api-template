@@ -1,12 +1,12 @@
-import { ICreateErrorRepository } from '@application/protocols/repositories/error';
+import { ICreateErrorRepository } from '@application/protocols/repositories/error'
 
-import { prisma } from '..';
+import { prisma } from '..'
 
 export class PrismaErrorsRepository implements ICreateErrorRepository {
   async create(
-    data: ICreateErrorRepository.Input
+    data: ICreateErrorRepository.Input,
   ): Promise<ICreateErrorRepository.Output> {
-    const { exception_was_thrown_in, http_method, resource_url, stack } = data;
+    const { exception_was_thrown_in, http_method, resource_url, stack } = data
 
     const error = await prisma.error.create({
       data: {
@@ -15,8 +15,8 @@ export class PrismaErrorsRepository implements ICreateErrorRepository {
         resource_url,
         stack,
       },
-    });
+    })
 
-    return error;
+    return error
   }
 }

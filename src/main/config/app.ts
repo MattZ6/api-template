@@ -1,13 +1,13 @@
-import express from 'express';
+import express from 'express'
 
-import { setupHealthCheckEndpoint } from '@main/config/healthCheck';
-import { setupMiddlewares } from '@main/config/middlewares';
-import { setupRoutes } from '@main/routes';
+import { setupHealthCheckEndpoint } from '@main/config/healthCheck'
+import { setupMiddlewares } from '@main/config/middlewares'
+import { setupRoutes } from '@main/routes'
 
-const app = express();
+const app = express()
 
-setupMiddlewares(app);
-setupHealthCheckEndpoint(app);
-setupRoutes(app);
+setupMiddlewares(app)
+setupHealthCheckEndpoint(app)
+setupRoutes(app)
 
-export { app };
+export { app }

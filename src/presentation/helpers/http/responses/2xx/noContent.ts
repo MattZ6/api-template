@@ -1,7 +1,7 @@
-import { HttpProtocols } from '@presentation/protocols';
+import { HttpProtocols } from '@presentation/protocols'
 
 export function noContent(): HttpProtocols.IResponse<void> {
   return {
     statusCode: 204,
-  };
+  }
 }
