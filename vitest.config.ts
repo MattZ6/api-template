@@ -19,7 +19,7 @@ export default defineConfig({
     clearMocks: true,
     include: ['**/*.spec.ts'],
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       include: ['src/**/*.ts'],
     },
   },
