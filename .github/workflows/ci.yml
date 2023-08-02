@@ -66,6 +66,9 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm i --frozen-lockfile
 
+      - name: 🏗️ Setup prisma types
+        run: pnpm exec prisma generate
+
       - name: 🛠️ Check types
         run: yarn type-check
 
