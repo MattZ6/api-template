@@ -28,12 +28,12 @@
     "schema": "./src/infra/database/prisma/schema.prisma"
   },
   "devDependencies": {
-    "@babel/cli": "7.22.9",
-    "@babel/core": "7.22.9",
-    "@babel/node": "7.22.6",
+    "@babel/cli": "7.25.7",
+    "@babel/core": "7.25.8",
+    "@babel/node": "7.25.7",
     "@babel/plugin-proposal-class-properties": "7.18.6",
-    "@babel/preset-env": "7.22.9",
-    "@babel/preset-typescript": "7.22.5",
+    "@babel/preset-env": "7.25.8",
+    "@babel/preset-typescript": "7.25.7",
     "@faker-js/faker": "8.0.2",
     "@rocketseat/eslint-config": "2.1.0",
     "@types/cors": "2.8.13",
